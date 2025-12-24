@@ -1,0 +1,15 @@
+C:\Users\FAME\Documents\Network prog\lab0\bin\Debug\net8.0\simple_crawler.exe
+C:\Users\FAME\Documents\Network prog\lab0\bin\Debug\net8.0\simple_crawler.deps.json
+C:\Users\FAME\Documents\Network prog\lab0\bin\Debug\net8.0\simple_crawler.runtimeconfig.json
+C:\Users\FAME\Documents\Network prog\lab0\bin\Debug\net8.0\simple_crawler.dll
+C:\Users\FAME\Documents\Network prog\lab0\bin\Debug\net8.0\simple_crawler.pdb
+C:\Users\FAME\Documents\Network prog\lab0\obj\Debug\net8.0\simple_crawler.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\FAME\Documents\Network prog\lab0\obj\Debug\net8.0\simple_crawler.AssemblyInfoInputs.cache
+C:\Users\FAME\Documents\Network prog\lab0\obj\Debug\net8.0\simple_crawler.AssemblyInfo.cs
+C:\Users\FAME\Documents\Network prog\lab0\obj\Debug\net8.0\simple_crawler.csproj.CoreCompileInputs.cache
+C:\Users\FAME\Documents\Network prog\lab0\obj\Debug\net8.0\simple_crawler.sourcelink.json
+C:\Users\FAME\Documents\Network prog\lab0\obj\Debug\net8.0\simple_crawler.dll
+C:\Users\FAME\Documents\Network prog\lab0\obj\Debug\net8.0\refint\simple_crawler.dll
+C:\Users\FAME\Documents\Network prog\lab0\obj\Debug\net8.0\simple_crawler.pdb
+C:\Users\FAME\Documents\Network prog\lab0\obj\Debug\net8.0\simple_crawler.genruntimeconfig.cache
+C:\Users\FAME\Documents\Network prog\lab0\obj\Debug\net8.0\ref\simple_crawler.dll
