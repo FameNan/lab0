@@ -11,11 +11,13 @@ public partial class Crawler
     
     protected String? basedFolder = null;
     protected int maxLinksPerPage = 3;
+    protected HashSet<String> visitedUrls = new(); //added to track visited URLs
 
     /// <summary>
     /// Method <c>SetBasedFolder</c> sets based folder to store retrieved contents.
     /// </summary>
     /// <param name="folder">the name of the based folder</param>
+    
     public void SetBasedFolder(String folder)
     {
         if (String.IsNullOrEmpty(folder))
@@ -43,7 +45,13 @@ public partial class Crawler
     public async Task GetPage(String url, int level)
     {
         // Your code here
-        // Note: you need this step for recursive operation
+        // Note: you need this step for recursive operation--complete to check visited URLs
+        //stop recursion if level<0 or url has been visited
+        if(level<0||visitedUrls.Contains(url)) 
+        {
+            return;
+        }
+        visitedUrls.Add(url);
         if (basedFolder == null)
         {
             throw new Exception("Please set the value of base folder using SetBasedFolder method first.");
@@ -77,8 +85,11 @@ public partial class Crawler
                     if(link.StartsWith("http", StringComparison.InvariantCultureIgnoreCase))
                     {
                         // Your code here
-                        // Note: It should be recursive operation here
-
+                        // Note: It should be recursive operation here--complete it
+                        if(level>0)
+                        {
+                            await GetPage(link, level - 1);
+                        }
                         // limit number of links in the page, otherwise it will load lots of data
                         if (++count >= maxLinksPerPage) break;
                     }
@@ -126,12 +137,13 @@ public partial class Crawler
 }
 class Program
 {
-    static void Main(string[] args)
+    
+    static async Task Main(string[] args)
     {
         Crawler cw = new();
-        // Can you improve this code?
+        // Can you improve this code?-->change to use async await instead of .Wait()
         cw.SetBasedFolder(".");
         cw.SetMaxLinksPerPage(5);
-        cw.GetPage("https://dandadan.net/", 2).Wait();
+        await cw.GetPage("https://dandadan.net/", 2);
     }
 }
