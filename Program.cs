@@ -12,7 +12,7 @@ public partial class Crawler
     protected String? basedFolder = null;
     protected int maxLinksPerPage = 3;
     protected HashSet<String> visitedUrls = new(); //added to track visited URLs
-
+    private static readonly HttpClient client = new(); //Edited to make HttpClient static to reuse it
     /// <summary>
     /// Method <c>SetBasedFolder</c> sets based folder to store retrieved contents.
     /// </summary>
@@ -25,6 +25,11 @@ public partial class Crawler
             throw new ArgumentNullException(nameof(folder));
         }
         basedFolder = folder;
+        //Edided to create new the directory if it does not exist
+        if (!Directory.Exists(basedFolder))
+        {
+            Directory.CreateDirectory(basedFolder);
+        }
     }
 
     /// <summary>
@@ -52,6 +57,7 @@ public partial class Crawler
             return;
         }
         visitedUrls.Add(url);
+        
         if (basedFolder == null)
         {
             throw new Exception("Please set the value of base folder using SetBasedFolder method first.");
@@ -62,7 +68,7 @@ public partial class Crawler
         }
 
         // For simplicity, we will use <c>HttpClient</c> here, but if you want you can try <c>TcpClient</c>
-        HttpClient client = new();
+        //HttpClient client = new();
 
         try
         {
